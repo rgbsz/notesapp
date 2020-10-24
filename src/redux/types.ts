@@ -1,9 +1,9 @@
-export interface todoTypes {
+export interface noteTypes {
     id: number,
     content: string
 }
 
-export type stateTypes = todoTypes[]
+export type stateTypes = noteTypes[]
 
 export const ADD_NOTE = 'ADD_NOTE'
 export const EDIT_NOTE = 'EDIT_NOTE'
@@ -11,12 +11,12 @@ export const REMOVE_NOTE = 'REMOVE_NOTE'
 
 export interface addNoteAction {
     type: typeof ADD_NOTE,
-    payload: todoTypes
+    payload: noteTypes
 }
 
 export interface editNoteAction {
     type: typeof EDIT_NOTE,
-    payload: todoTypes
+    payload: noteTypes
 }
 
 export interface removeNoteAction {
