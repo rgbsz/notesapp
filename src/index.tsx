@@ -1,14 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import App from './views/main/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import { store } from './redux';
+import { createGlobalStyle } from 'styled-components'
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+  }
+`
 
 ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
+      <GlobalStyle />
       <App />
     </React.StrictMode>
   </Provider>,
