@@ -1,9 +1,17 @@
 import React from 'react'
 
-import { Wrapper } from './sidebar.styles'
+import { Wrapper, Heading, Button, Option } from './sidebar.styles'
 
-export const Sidebar: React.FC = () => {
+const Sidebar: React.FC = () => {
     return (
-        <Wrapper>Sidebar</Wrapper>
+        <Wrapper>
+            <Heading>Docket</Heading>
+            <Button />
+            <Option background={'red'}/>
+            <Option background={'yellow'}/>
+            <Option background={'blue'}/>
+        </Wrapper>
     )
 }
+
+export default Sidebar
