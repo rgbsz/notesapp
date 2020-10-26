@@ -45,3 +45,9 @@ export const Option = styled.button<{ background: string }>`
     background: ${({ background }) => background};
     margin-bottom: 1rem;
 `
+
+export const Options = styled.div<{ display: boolean }>`
+    display: ${({ display }) => display ? 'flex' : 'none'};
+    flex-direction: column;
+    align-items: center;
+`

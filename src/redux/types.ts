@@ -1,6 +1,7 @@
 export interface noteTypes {
     id: string,
-    content: string
+    content: string,
+    color: string
 }
 
 export type stateTypes = noteTypes[]

@@ -12,6 +12,17 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
   }
+  button {
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    &:focus {
+      outline: none;
+    }
+  }
 `
 
 ReactDOM.render(
