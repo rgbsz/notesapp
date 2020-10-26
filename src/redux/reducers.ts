@@ -8,5 +8,7 @@ export const storeReducer = (state: stateTypes = [], action: actionTypes) => {
             return state.map((note: noteTypes) => note.id === action.payload.id ? action.payload : note)
         case REMOVE_NOTE:
             return state.filter((note: noteTypes) => note.id !== action.payload)
+        default:
+            return state
     }
 }
