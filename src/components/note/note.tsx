@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { editNote, removeNote } from '../../redux/actions'
-import { noteTypes, stateTypes } from '../../redux/types'
+import { noteTypes } from '../../redux/types'
 import { removeLocalNote, saveLocalNote } from './note.functions'
 
 import DeleteIcon from '../../images/delete'
