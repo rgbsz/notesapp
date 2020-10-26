@@ -23,6 +23,22 @@ const GlobalStyle = createGlobalStyle`
       outline: none;
     }
   }
+  
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: white;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: black;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
 `
 
 ReactDOM.render(
