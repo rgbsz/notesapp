@@ -5,8 +5,7 @@ import Heading from '../heading'
 import SearchBar from '../searchbar'
 
 import { Wrapper } from './content.styles'
-import { useSelector } from 'react-redux'
-import { noteTypes, stateTypes } from '../../redux/types'
+import { noteTypes } from '../../redux/types'
 
 const Content: React.FC<{ notes: noteTypes[] }> = ({ notes }) => {
     const [filterText, setFilterText] = useState<string>('')

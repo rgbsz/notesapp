@@ -1,6 +1,5 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { noteTypes, stateTypes } from '../../redux/types'
+import { noteTypes } from '../../redux/types'
 
 import Note from '../note'
 

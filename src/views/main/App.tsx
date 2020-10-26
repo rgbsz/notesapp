@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 
 import Sidebar from '../../components/sidebar';
 import Content from '../../components/content';
@@ -8,7 +8,7 @@ import { Container } from './app.styles'
 import { getNotes } from './app.functions';
 import { useDispatch, useSelector } from 'react-redux';
 import { setNotes } from '../../redux/actions';
-import { noteTypes, stateTypes } from '../../redux/types';
+import { stateTypes } from '../../redux/types';
 
 const App: React.FC = () => {
   const dispatch = useDispatch()
