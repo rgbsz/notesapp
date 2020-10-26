@@ -23,7 +23,7 @@ const Sidebar: React.FC = () => {
         <Wrapper>
             <Heading>Docket</Heading>
             <Button onClick={() => setOptionsVisibility((prev: boolean) => !prev)}/>
-            <Options display={optionsVisibility}>
+            <Options display={optionsVisibility ? 'flex' : 'none'}>
                 <Option background={'#FBC871'} onClick={() => handleAddNote('#FBC871')}/>
                 <Option background={'#F29972'} onClick={() => handleAddNote('#F29972')}/>
                 <Option background={'#B792FD'} onClick={() => handleAddNote('#B792FD')}/>

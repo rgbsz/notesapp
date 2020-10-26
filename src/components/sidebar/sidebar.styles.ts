@@ -46,8 +46,8 @@ export const Option = styled.button<{ background: string }>`
     margin-bottom: 1rem;
 `
 
-export const Options = styled.div<{ display: boolean }>`
-    display: ${({ display }) => display ? 'flex' : 'none'};
+export const Options = styled.div<{ display: string }>`
+    display: ${({ display }) => display};
     flex-direction: column;
     align-items: center;
 `

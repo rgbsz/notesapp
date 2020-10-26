@@ -22,7 +22,7 @@ const Note: React.FC<{ data: noteTypes }> = ({ data }) => {
     }
     return (
         <NoteComponent key={data.id} color={data.color}>
-            <textarea maxLength={200} onInput={(e: any) => setContent(e.target.value)}>{content}</textarea>
+            <textarea maxLength={200} onInput={(e: any) => setContent(e.target.value)} value={content}></textarea>
             <BottomPanel color={data.color} display={data.content !== content ? 'space-between' : 'flex-end'}>
                 {
                     data.content !== content && <p>Unsaved changes</p>
