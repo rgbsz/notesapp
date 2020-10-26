@@ -1,17 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Sidebar from '../../components/sidebar';
 import Content from '../../components/content';
 
 import { Wrapper } from './app.styles'
 import { Container } from './app.styles'
+import { getNotes } from './app.functions';
+import { useDispatch, useSelector } from 'react-redux';
+import { setNotes } from '../../redux/actions';
+import { noteTypes, stateTypes } from '../../redux/types';
 
 const App: React.FC = () => {
+  const dispatch = useDispatch()
+  const notes = useSelector((state: stateTypes) => state)
+  useEffect(() => {
+    const notes = getNotes()
+    dispatch(setNotes(notes))
+  }, [])
   return (
     <Wrapper>
       <Container>
         <Sidebar />
-        <Content />
+        <Content notes={notes}/>
       </Container>
     </Wrapper>
   )

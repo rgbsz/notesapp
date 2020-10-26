@@ -1,13 +1,19 @@
 export interface noteTypes {
-    id: number,
+    id: string,
     content: string
 }
 
 export type stateTypes = noteTypes[]
 
+export const SET_NOTES = 'SET_NOTES'
 export const ADD_NOTE = 'ADD_NOTE'
 export const EDIT_NOTE = 'EDIT_NOTE'
 export const REMOVE_NOTE = 'REMOVE_NOTE'
+
+export interface setNotesAction {
+    type: typeof SET_NOTES,
+    payload: noteTypes[]
+}
 
 export interface addNoteAction {
     type: typeof ADD_NOTE,
@@ -21,7 +27,7 @@ export interface editNoteAction {
 
 export interface removeNoteAction {
     type: typeof REMOVE_NOTE,
-    payload: number
+    payload: string
 }
 
-export type actionTypes = addNoteAction | editNoteAction | removeNoteAction
+export type actionTypes = setNotesAction | addNoteAction | editNoteAction | removeNoteAction

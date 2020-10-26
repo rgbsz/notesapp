@@ -1,49 +1,15 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import { noteTypes, stateTypes } from '../../redux/types'
 
 import { Wrapper, Note } from './notesgrid.styles'
 
-const NotesGrid: React.FC = () => {
+const NotesGrid: React.FC<{ notes: noteTypes[], filterText: string }> = ({ notes, filterText }) => {
     return (
         <Wrapper>
-            <Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note><Note>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat magnam cumque illum nesciunt dolorum sit exercitationem numquam veniam. Nihil fugit officia obcaecati recusandae quasi iste debitis vitae libero eius ad.</p>
-            </Note>
+            {
+                notes.map((note: noteTypes) => note.content.includes(filterText) && <Note><p key={note.id}>{note.content}</p></Note>)
+            }
         </Wrapper>
     )
 }
