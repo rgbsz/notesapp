@@ -9,7 +9,7 @@ const NotesGrid: React.FC<{ notes: noteTypes[], filterText: string }> = ({ notes
     return (
         <Wrapper>
             {
-                notes.map((note: noteTypes, i: number) => note.content.includes(filterText) && <Note data={note} key={i} />)
+                notes.map((note: noteTypes, i: number) => note.content.includes(filterText) && <Note data={note} key={note.id} />)
             }
         </Wrapper>
     )
